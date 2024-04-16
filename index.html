@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="css/main.css" />
+
+    <!-- Main JS File -->
+    <script type="module" src="js/main.js"></script>
+  </head>
+  <body>
+    <main>
+      <h1 class="center">Rock Paper Scissors</h1>
+      <a href="#p1msg" class="skip-link">Skip Scoreboard</a>
+
+      <section id="scoreboard" class="scoreboard flex-center">
+        <h2 class="offscreen">Scoreboard</h2>
+        <section id="all-time" class="scoreboard__section">
+          <h3 class="offscreen">All time scoreboard</h3>
+          <div class="scoreboard__header" aria-hidden="true">
+            <p title="Player One">P1</p>
+            <p>All Time</p>
+            <p title="Computer Player">CP</p>
+          </div>
+          <div class="scoreboard__row" role="row">
+            <div
+              id="p1_all_time_score"
+              class="scoreboard__score center flex-center"
+              role="cell"
+              aria-label="Player One All Time Wins"
+              tabindex="0"
+            >
+              0
+            </div>
+            <div
+              id="cp_all_time_score"
+              class="scoreboard__score center flex-center"
+              role="cell"
+              aria-label="Computer Player All Time Wins"
+              tabindex="0"
+            >
+              0
+            </div>
+          </div>
+        </section>
+        <section id="session" class="scoreboard__section">
+          <h3 class="offscreen">Session scoreboard</h3>
+          <div class="scoreboard__header" aria-hidden="true">
+            <p title="Player One">P1</p>
+            <p>Session</p>
+            <p title="Computer Player">CP</p>
+          </div>
+          <div class="scoreboard__row" role="row">
+            <div
+              id="p1_session_score"
+              class="scoreboard__score center flex-center"
+              role="cell"
+              aria-label="Player One wins this session"
+              tabindex="0"
+            >
+              0
+            </div>
+            <div
+              id="cp_session_score"
+              class="scoreboard__score center flex-center"
+              role="cell"
+              aria-label="Computer Player wins this session"
+              tabindex="0"
+            >
+              0
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section id="playerboard" class="playerboard">
+        <h2
+          id="p1msg"
+          class="center"
+          aria-label="Player one chooses"
+          tabindex="0"
+        >
+          Player one chooses...
+        </h2>
+        <div id="gameboard" class="gameboard">
+          <div id="rock" class="gameboard__square">
+            <img
+              src="imgs/rock.png"
+              alt="select rock"
+              title="Rock"
+              width="500"
+              height="500"
+              tabindex="0"
+            />
+          </div>
+          <div id="paper" class="gameboard__square">
+            <img
+              src="imgs/paper.png"
+              alt="select paper"
+              title="Paper"
+              width="500"
+              height="500"
+              tabindex="0"
+            />
+          </div>
+          <div id="scissors" class="gameboard__square">
+            <img
+              src="imgs/scissors.png"
+              alt="select scissors"
+              title="Scissors"
+              width="500"
+              height="500"
+              tabindex="0"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section id="computerboard" class="computerboard">
+        <h2
+          id="cpmsg"
+          class="center"
+          aria-label="Computer chooses"
+          tabindex="0"
+        >
+          Computer chooses...
+        </h2>
+        <div id="cp-gameboard" class="gameboard">
+          <div id="cp-rock" class="gameboard__square flex-center unclickable">
+            <img
+              src="imgs/rock.png"
+              alt="rock"
+              title="Rock"
+              width="500"
+              height="500"
+            />
+          </div>
+          <div id="cp-paper" class="gameboard__square flex-center unclickable">
+            <img
+              src="imgs/paper.png"
+              alt="paper"
+              title="Paper"
+              width="500"
+              height="500"
+            />
+          </div>
+          <div
+            id="cp-scissors"
+            class="gameboard__square flex-center unclickable"
+          >
+            <img
+              src="imgs/scissors.png"
+              alt="scissors"
+              title="Scissors"
+              width="500"
+              height="500"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <form>
+      <button id="play-again" class="play-again d-none" type="submit">
+        Play again?
+      </button>
+    </form>
+  </body>
+</html>
