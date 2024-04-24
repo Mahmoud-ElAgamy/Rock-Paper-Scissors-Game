@@ -36,7 +36,10 @@ main {
 h1 {
   margin-bottom: 0.4rem;
   font-size: 1rem;
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  h1 {
     font-size: 2rem;
   }
 }
@@ -44,7 +47,10 @@ h1 {
 h2 {
   margin: 0.5rem 0;
   font-size: 0.85rem;
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  h2 {
     font-size: 1.5rem;
   }
 }
@@ -121,10 +127,10 @@ img {
   cursor: pointer;
   transition: 0.3s;
   animation: pulse 1s linear infinite;
+}
 
-  &:hover {
-    animation: none;
-  }
+.play-again:hover {
+  animation: none;
 }
 
 /* Scoreboard Section */
@@ -133,59 +139,68 @@ img {
   max-width: 500px;
   margin: 0 auto;
   flex-wrap: wrap;
-  @media (min-width: 800px) {
+}
+
+@media (min-width: 800px) {
+  .scoreboard {
     justify-content: space-between;
     max-width: 800px;
   }
+}
 
+.scoreboard__section {
+  width: calc(100% - 5px);
+  max-width: 500px;
+}
+
+@media (min-width: 800px) {
   .scoreboard__section {
-    width: calc(100% - 5px);
-    max-width: 500px;
-    @media (min-width: 800px) {
-      max-width: 395px;
-    }
-
-    .scoreboard__header {
-      width: 100%;
-      background-color: #fff;
-      color: #11161f;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      p {
-        margin: 0 10px;
-      }
-    }
-
-    .scoreboard__row {
-      display: flex;
-      flex-wrap: nowrap;
-      width: 100%;
-      font-size: 1.25rem;
-
-      .scoreboard__score {
-        width: 50%;
-        min-height: 2.5rem;
-        border: 2px solid #fff;
-      }
-
-      .scoreboard__score:nth-child(odd) {
-        border-right: 0;
-        border-top: 0;
-      }
-
-      .scoreboard__score:nth-child(even) {
-        border-top: 0;
-      }
-    }
+    max-width: 395px;
   }
+}
 
+.scoreboard__section .scoreboard__header {
+  width: 100%;
+  background-color: #fff;
+  color: #11161f;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.scoreboard__header p {
+  margin: 0 10px;
+}
+
+.scoreboard__row {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  font-size: 1.25rem;
+}
+
+.scoreboard__row .scoreboard__score {
+  width: 50%;
+  min-height: 2.5rem;
+  border: 2px solid #fff;
+}
+
+.scoreboard__row .scoreboard__score:nth-child(odd) {
+  border-right: 0;
+  border-top: 0;
+}
+
+.scoreboard__row .scoreboard__score:nth-child(even) {
+  border-top: 0;
+}
+
+.scoreboard__section:last-child {
+  margin-top: 10px;
+}
+
+@media (min-width: 768px) {
   .scoreboard__section:last-child {
-    margin-top: 10px;
-    @media (min-width: 768px) {
-      margin-top: 0;
-    }
+    margin-top: 0;
   }
 }
 
@@ -200,55 +215,61 @@ h2 {
   width: calc(100% - 5px);
   margin-left: 5px;
   margin-bottom: 10px;
-  @media (min-width: 375px) {
+}
+
+@media (min-width: 375px) {
+  .gameboard {
     width: calc(100% - 15px);
     margin-left: 15px;
   }
+}
 
-  .gameboard__square {
-    width: 30%;
+.gameboard__square {
+  width: 30%;
+}
 
-    img {
-      width: 90%;
-      cursor: pointer;
-      transition: 0.5s;
-      outline: none;
+.gameboard__square img {
+  width: 90%;
+  cursor: pointer;
+  transition: 0.5s;
+  outline: none;
+}
 
-      &:is(:hover, :focus) {
-        width: 80%;
-        filter: brightness(120%);
-      }
-    }
+img:is(:hover, :focus) {
+  width: 80%;
+  filter: brightness(120%);
+}
 
-    p {
-      font-size: 4rem;
-      animation: fadeInFromNone 1s ease-in;
-      @media (min-width: 768px) {
-        font-size: 5.5rem;
-      }
-    }
+.gameboard__square p {
+  font-size: 4rem;
+  animation: fadeInFromNone 1s ease-in;
+}
 
-    .fadeOut {
-      opacity: 0;
-      animation: fadeOut 1s ease-in-out;
-    }
+@media (min-width: 768px) {
+  .gameboard__square p {
+    font-size: 5.5rem;
   }
+}
 
-  .selected {
-    margin: auto;
-    transition: 0.5s linear;
-  }
+.gameboard__square .fadeOut {
+  opacity: 0;
+  animation: fadeOut 1s ease-in-out;
+}
 
-  .not-selected {
-    visibility: hidden;
-    width: 0;
-    transition: 0.5s linear;
-  }
+.gameboard .selected {
+  margin: auto;
+  transition: 0.5s linear;
+}
 
-  .unclickable {
-    pointer-events: none;
-    user-select: none;
-  }
+.gameboard .not-selected {
+  visibility: hidden;
+  width: 0;
+  transition: 0.5s linear;
+}
+
+.gameboard .unclickable {
+  pointer-events: none;
+  user-select: none;
 }
 
 /* Animations */
